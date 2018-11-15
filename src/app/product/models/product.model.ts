@@ -7,6 +7,7 @@ export interface Product {
     releaseDate: string;
     price: number;
     description: string;
+    available: number;
     starRating: number;
     imageUrl: string;
 }

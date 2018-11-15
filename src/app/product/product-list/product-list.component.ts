@@ -9,6 +9,8 @@ import { Product } from '../models/product.model';
 export class ProductListComponent implements OnInit {
 
   pageTitle: string = 'Product List';
+  showImage: boolean = false;
+  filterText: string = 'i am a fliter text';
   products: Product[] = [
     {
       productId:  1,
@@ -17,9 +19,10 @@ export class ProductListComponent implements OnInit {
       releaseDate: "March 19, 2016",
       category : "CPU Parts",
       description: "DDR3 RAM",
+      available: 5,
       price: 1500,
       starRating: 3.2,
-      imageUrl: "https://someram.png"
+      imageUrl: "https://images10.newegg.com/ProductImageCompressAll1280/20-148-679-02.jpg"
     }
   ]
 
@@ -27,6 +30,14 @@ export class ProductListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  toggleImage() {
+    this.showImage = !this.showImage;
+  }
+
+  showDescription(productDescription) {
 
   }
 
