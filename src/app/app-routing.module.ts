@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductModule } from './product/product.module';
+
 
 const routes: Routes = [
   {
@@ -13,9 +13,7 @@ const routes: Routes = [
   }, 
   {
     path: 'products',
-    // loadChildren: './product/product.module#ProductModule',
     loadChildren: () => ProductModule
-
   },
   {
     path: '',

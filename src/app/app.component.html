@@ -10,14 +10,17 @@
 <router-outlet></router-outlet>
  -->
 
-<nav class='navbar navbar-expand navbar-light bg-light'>
+
+
+<nav class='navbar navbar-expand navbar-dark bg-light'>
     <a class='navbar-brand'>{{ title }}</a>
-    <ul class='nav'>
+    <ul class='nav active'>
       <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/']">Home</a></li>
       <br>
       <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/products']">Product List</a></li>
     </ul>
 </nav>
+<br>
 <div class='container'>
   <router-outlet></router-outlet>
 </div>
