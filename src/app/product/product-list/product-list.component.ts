@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product.model';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -12,32 +13,7 @@ export class ProductListComponent implements OnInit {
   showImage: boolean = false;
   filterText: string;
   filteredProducts: Product[]; 
-  products: Product[] = [
-    {
-      productId:  1,
-      productName: "8 GB RAM",
-      productCode: "RAM-008-GB",
-      releaseDate: "March 19, 2016",
-      category : "CPU Parts",
-      description: "DDR3 RAM",
-      available: 5,
-      price: 1500,
-      starRating: 3.2,
-      imageUrl: "https://images10.newegg.com/ProductImageCompressAll1280/20-148-679-02.jpg"
-    },
-    {
-      productId:  2,
-      productName: "SSD",
-      productCode: "RAM-008-GB",
-      releaseDate: "March 19, 2016",
-      category : "CPU Parts",
-      description: "DDR3 RAM",
-      available: 5,
-      price: 1500,
-      starRating: 3.2,
-      imageUrl: "https://images10.newegg.com/ProductImageCompressAll1280/20-148-679-02.jpg"
-    }
-  ];
+  products: Product[];
 
   filterChanged(value: string) {
     this.filteredProducts = (value) ? this.performFilter(value) : this.products
@@ -51,10 +27,17 @@ export class ProductListComponent implements OnInit {
 
   }
   
-  constructor() { }
+  constructor(private productService : ProductService) { }
 
   ngOnInit() {
-    this.filteredProducts = this.products;
+
+    this.productService.getProducts().subscribe((products) => {
+      this.products = products;
+      this.filteredProducts = this.products;
+    });
+
+    // this.products =  this.productService.getProducts();
+
   }
 
   toggleImage() {
