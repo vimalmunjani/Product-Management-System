@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 // Feature modules
-import { ProductModule } from './product/product.module';
+// import { ProductModule } from './product/product.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ProductModule,
+    // ProductModule,
     SharedModule,
     HttpClientModule,
     HttpClientJsonpModule

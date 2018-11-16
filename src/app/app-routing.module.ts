@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductModule } from './product/product.module';
+// import { ProductModule } from './product/product.module';
 
 
 const routes: Routes = [
@@ -13,7 +13,8 @@ const routes: Routes = [
   }, 
   {
     path: 'products',
-    loadChildren: () => ProductModule
+    // loadChildren: () => ProductModule
+    loadChildren: 'src/app/product/product.module#ProductModule'
   },
   {
     path: '',
