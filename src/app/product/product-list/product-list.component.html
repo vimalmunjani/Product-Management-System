@@ -45,7 +45,10 @@
               height="auto">
             </td>
             <td data-toggle="tooltip" data-placement="top" title="Tooltip on top"> {{ product.productId }} </td>
-            <td> {{ product.productName }} </td>
+            <td>
+            <a [routerLink]="[product.productId]"> {{ product.productName }}  </a>
+              
+              </td>
             <td> {{ product.productCode }} </td>
             <td> {{ product.available }} </td>
             <td> {{ product.price }} </td>

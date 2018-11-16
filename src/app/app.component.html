@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
       Product Management System
   </h1>
@@ -8,3 +8,16 @@
 
 
 <router-outlet></router-outlet>
+ -->
+
+<nav class='navbar navbar-expand navbar-light bg-light'>
+    <a class='navbar-brand'>{{ title }}</a>
+    <ul class='nav'>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/']">Home</a></li>
+      <br>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/products']">Product List</a></li>
+    </ul>
+</nav>
+<div class='container'>
+  <router-outlet></router-outlet>
+</div>
