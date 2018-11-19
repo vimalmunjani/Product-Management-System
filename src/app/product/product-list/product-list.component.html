@@ -44,7 +44,7 @@
               width="100px" 
               height="auto">
             </td>
-            <td data-toggle="tooltip" data-placement="top" title="Tooltip on top"> {{ product.productId }} </td>
+            <td> {{ product.productId }} </td>
             <td>
             <a [routerLink]="[product.productId]"> {{ product.productName }}  </a>
               
@@ -52,9 +52,9 @@
             <td> {{ product.productCode }} </td>
             <td> {{ product.available }} </td>
             <td> {{ product.price }} </td>
-            <td> {{ product.starRating }} 
-                <app-star-rating>
-                  </app-star-rating>
+            <td>
+                <app-star-rating  [rating]=" product.starRating">
+                </app-star-rating>
             </td>
           </tr>
         </tbody>

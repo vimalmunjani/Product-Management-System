@@ -1,4 +1,12 @@
-div {
+.star-wrapper {
+    overflow: hidden;
+  }
+  div {
+    cursor: pointer;
+  }
+
+
+/* div {
     cursor: pointer;
     box-sizing: border-box;
     margin: 0;
@@ -30,4 +38,4 @@ span {
     padding: 0%;
     width: 106.9px;
     overflow: hidden; 
-}
+} */
