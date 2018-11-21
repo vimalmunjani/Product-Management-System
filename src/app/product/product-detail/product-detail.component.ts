@@ -12,6 +12,7 @@ export class ProductDetailComponent implements OnInit {
 
   productId;
   product: Product;
+  editMode = false;
 
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
@@ -39,6 +40,18 @@ export class ProductDetailComponent implements OnInit {
   onBack() {
 
     this.router.navigate(['products']);
+
+  }
+
+  // onEdit() {
+
+  //   this.editMode = !this.editMode;
+
+  // }
+
+  onEdit() {
+
+    this.router.navigate(['edit','1']);
 
   }
 

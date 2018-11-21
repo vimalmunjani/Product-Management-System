@@ -1,0 +1,223 @@
+<div class='card'>
+  <div class='card-header bold-text'>
+    Add Product : {{ productAddForm.get('productName').value }}
+  </div>
+
+
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-8'>
+        <form [formGroup]="productAddForm">
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Product Id :</div>
+            <div class='col-md-6'>
+              <input type="text" class="form-control" 
+              formControlName="productId" 
+              placeholder="productId"
+              [ngClass]="{'is-invalid':  (productAddForm.get('productId').touched ||
+                                            productAddForm.get('productId').dirty) &&
+                                            !productAddForm.get('productId').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('productId').errors?.required">
+                *Please enter Product Id.
+              </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Product Name :</div>
+            <div class='col-md-6'>
+              <input type="text" class="form-control" formControlName="productName" 
+              placeholder="productName"
+              [ngClass]="{'is-invalid':  (productAddForm.get('productName').touched ||
+                                            productAddForm.get('productName').dirty) &&
+                                            !productAddForm.get('productName').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('productName').errors?.required">
+                *Please enter Product Name.
+              </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Product Code :</div>
+            <div class='col-md-6'>
+              <input type="text" class="form-control" formControlName="productCode" 
+              placeholder="productCode"
+              [ngClass]="{'is-invalid':  (productAddForm.get('productCode').touched ||
+                                            productAddForm.get('productCode').dirty) &&
+                                            !productAddForm.get('productCode').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('productCode').errors?.required">
+                *Please enter Product Code.
+              </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Category :</div>
+            <div class='col-md-6'>
+              <input type="text" class="form-control" formControlName="category" 
+              placeholder="category"
+              [ngClass]="{'is-invalid':  (productAddForm.get('category').touched ||
+                                            productAddForm.get('category').dirty) &&
+                                            !productAddForm.get('category').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('category').errors?.required">
+                *Please enter Category.
+              </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Tags :</div>
+            <div class='col-md-6'>
+              <input type="text" class="form-control" formControlName="tags" 
+              placeholder="tags"
+              [ngClass]="{'is-invalid':  (productAddForm.get('tags').touched ||
+                                            productAddForm.get('tags').dirty) &&
+                                            !productAddForm.get('tags').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('tags').errors?.required">
+                *Please enter Tags.
+              </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Release Date :</div>
+            <div class='col-md-6'>
+              <input type="date" class="form-control" formControlName="releaseDate" 
+              placeholder="releaseDate"
+              [ngClass]="{'is-invalid':  (productAddForm.get('releaseDate').touched ||
+                                            productAddForm.get('releaseDate').dirty) &&
+                                            !productAddForm.get('releaseDate').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('releaseDate').errors?.required">
+                *Please enter Release Date.
+              </span>
+            </div>
+          </div>
+
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Price :</div>
+            <div class='col-md-6'>
+              <input type="number" class="form-control" formControlName="price" 
+              placeholder="price"
+              [ngClass]="{'is-invalid':  (productAddForm.get('price').touched ||
+                                            productAddForm.get('price').dirty) &&
+                                            !productAddForm.get('price').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('price').errors?.required">
+                *Please enter Price.
+              </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Description :</div>
+            <div class='col-md-6'>
+              <input type="text" class="form-control" formControlName="description" 
+              placeholder="description"
+              [ngClass]="{'is-invalid':  (productAddForm.get('description').touched ||
+                                            productAddForm.get('description').dirty) &&
+                                            !productAddForm.get('description').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('description').errors?.required">
+                *Please enter Description.
+              </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Available Units:</div>
+            <div class='col-md-6'>
+              <input type="number" class="form-control" formControlName="available"
+              placeholder="available"
+              [ngClass]="{'is-invalid':  (productAddForm.get('available').touched ||
+                                            productAddForm.get('available').dirty) &&
+                                            !productAddForm.get('available').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('available').errors?.required">
+                *Please enter Available Units.
+              </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Threshold Units:</div>
+            <div class='col-md-6'>
+              <input type="number" class="form-control" formControlName="threshold" 
+              placeholder="threshold"
+              [ngClass]="{'is-invalid':  (productAddForm.get('threshold').touched ||
+                                            productAddForm.get('threshold').dirty) &&
+                                            !productAddForm.get('threshold').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('threshold').errors?.required">
+                *Please enter Threshold Units.
+              </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Star Rating :</div>
+            <div class='col-md-6'>
+              <input type="number" min="1" max="5" step = "0.5" class="form-control" formControlName="starRating" 
+              placeholder="starRating"
+              [ngClass]="{'is-invalid':  (productAddForm.get('starRating').touched ||
+                                            productAddForm.get('starRating').dirty) &&
+                                            !productAddForm.get('starRating').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('starRating').errors?.required">
+                *Please enter Star Rating
+              </span>
+              <span class="invalid-feedback" *ngIf="productAddForm.get('starRating').errors?.min || productAddForm.get('starRating').errors?.max">
+                  *Please enter Star Rating between 1 and 5.
+                </span>
+            </div>
+          </div>
+
+          <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Image Url :</div>
+            <div class='col-md-6'>
+              <input type="url" class="form-control" formControlName="imageUrl" 
+              placeholder="imageUrl"
+              [ngClass]="{'is-invalid':  (productAddForm.get('imageUrl').touched ||
+                                            productAddForm.get('imageUrl').dirty) &&
+                                            !productAddForm.get('imageUrl').valid }">
+              <span class="invalid-feedback" *ngIf="productAddForm.get('imageUrl').errors?.required">
+                *Please enter Image Url.
+              </span>
+            </div>
+          </div>
+
+
+
+
+
+          <!-- <div class='row singleField'>
+            <div class='col-md-4 bold-text'>Rating :</div>
+            <div class='col-md-8'>
+              <app-star-rating [rating]="">
+              </app-star-rating>
+            </div>
+
+          </div> -->
+        </form>
+      </div>
+
+      <div class='col-md-4'>
+        <img class='center-block img-responsive' [style.width.px]='200' [style.margin.px]='2' [src]='' [title]=''>
+      </div>
+    </div>
+  </div>
+
+  <div class='card-footer d-flex'>
+
+    <button class='btn btn-outline-dark' (click)='onBack()' style='width:80px'>
+      <i class='fa fa-chevron-left'></i> Back
+    </button>
+
+    <button class='btn btn-outline-danger ml-auto p-2 bd-highlight ' (click)='onEdit()' style='width:80px;'>
+      Cancel <i class="fas fa-times"></i>
+    </button>
+
+    <button [disabled] = "productAddForm.invalid" type="submit" class='save btn btn-outline-success p-2 bd-highlight ' (click)='onSubmit()' style='width:80px;'>
+      Save <i class="fas fa-check"></i>
+    </button>
+
+  </div>
+
+
+  <pre>{{ productAddForm.valid | json }}</pre>

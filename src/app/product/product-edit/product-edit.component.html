@@ -1,48 +1,10 @@
-<div class='card' *ngIf='product'>
-  <div class='card-header bold-text'>
-    Product Detail : {{ product.productName}}
+<div class='card'>
+    <div class='card-header bold-text'>
+      Product Detail : {{ product.productName}}
   </div>
+  
 
-  <div class='card-body' *ngIf="!editMode">
-    <div class='row'>
-      <div class='col-md-8'>
-        <div class='row singleField'>
-          <div class='col-md-4 bold-text'>Name :</div>
-          <div class='col-md-8'>{{ product.productName }}</div>
-        </div>
-        <div class='row singleField'>
-          <div class='col-md-4 bold-text'>Code :</div>
-          <div class='col-md-8'>{{ product.productCode }}</div>
-        </div>
-        <div class='row singleField'>
-          <div class='col-md-4 bold-text'>Description :</div>
-          <div class='col-md-8'>{{ product.description }}</div>
-        </div>
-        <div class='row singleField'>
-          <div class='col-md-4 bold-text'>Availability :</div>
-          <div class='col-md-8'>{{product.available}}</div>
-        </div>
-        <div class='row singleField'>
-          <div class='col-md-4 bold-text'>Price :</div>
-          <div class='col-md-8'>{{product.price | currency:'INR':'symbol' }}</div>
-        </div>
-        <div class='row singleField'>
-          <div class='col-md-4 bold-text'>Rating :</div>
-          <div class='col-md-8'>
-            <app-star-rating [rating]=" product.starRating">
-            </app-star-rating>
-          </div>
-        </div>
-      </div>
-
-      <div class='col-md-4'>
-        <img class='center-block img-responsive' [style.width.px]='200' [style.margin.px]='2' [src]='product.imageUrl'
-          [title]='product.productName'>
-      </div>
-    </div>
-  </div>
-
-  <div class='card-body' *ngIf="editMode">
+<div class='card-body' *ngIf="editMode">
       <div class='row'  >
         <div class='col-md-8'>
           <div class='row singleField'>
@@ -98,7 +60,9 @@
     </button>
 
     <button *ngIf = "!editMode" class='btn btn-outline-primary ml-auto p-2 bd-highlight ' (click)='onEdit()' style='width:80px;'>
-        <a [routerLink] = "['edit']" >Edit <i class="far fa-edit"></i> </a>
+      
+      <a [routerLink] = "['edit', product.productId]" >Edit <i class="far fa-edit"></i></a>
+      
     </button>
 
     <button *ngIf = "editMode" class='btn btn-outline-danger ml-auto p-2 bd-highlight ' (click)='onEdit()' style='width:80px;'>
@@ -110,4 +74,3 @@
     </button>
 
   </div>
-</div>

@@ -14,7 +14,9 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
-     return this.http.get<Product[]>(this.productUrl).pipe(
+     return this.http.get<{ message, status, data}>('https://prdmansys.herokuapp.com/api/products')
+     .pipe(
+       map(res => res.data),
        catchError(this.errorHandler)
      );
   }
@@ -22,9 +24,9 @@ export class ProductService {
 
   getProductById(id: string): Observable<Product>{
 
-    return this.http.get(this.productUrl).pipe(
+    return this.http.get<{ message, status, data}>(`https://prdmansys.herokuapp.com/api/products/${id}`).pipe(
       catchError(this.errorHandler),
-      map((products: Product[]) => products.find(p => p.productId === id))
+      map(res => res.data)
     );
 
     // this.http.get(this.productUrl).pipe(
@@ -37,6 +39,12 @@ export class ProductService {
     // });
     
  }
+
+  addProduct(product: Product): Observable<any> {
+
+    return this.http.post('https://prdmansys.herokuapp.com/api/products', product);
+
+  }
 
  private errorHandler(err: HttpErrorResponse) {
  

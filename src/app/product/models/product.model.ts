@@ -8,6 +8,7 @@ export interface Product {
     price: number;
     description: string;
     available: number;
+    threshold: number;
     starRating: number;
     imageUrl: string;
 }

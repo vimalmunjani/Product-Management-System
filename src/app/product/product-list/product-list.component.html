@@ -46,19 +46,24 @@
             </td>
             <td> {{ product.productId }} </td>
             <td>
-            <a [routerLink]="[product.productId]"> {{ product.productName }}  </a>
+            <a [routerLink]="[product._id]"> {{ product.productName }}  </a>
               
               </td>
             <td> {{ product.productCode }} </td>
             <td> {{ product.available }} </td>
             <td> {{ product.price }} </td>
-            <td>
+            <td class = "star-container">
                 <app-star-rating  [rating]=" product.starRating">
                 </app-star-rating>
             </td>
           </tr>
         </tbody>
       </table>
+
+      <div class="noSearchFound text-center" *ngIf = "filterText && filteredProducts.length == 0">
+        <p> No results matching the filter criteria </p> 
+      </div>
+      
     </div>
   </div>
 
