@@ -1,0 +1,19 @@
+.fa-times-circle {
+    color: red;
+}
+
+.fa-exclamation-circle {
+    color: darkorange;
+}
+
+.fa-check-circle {
+    color: green;
+}
+
+.fas {
+    font-size: 1.2rem;
+}
+
+span {
+    margin-left: 0.4rem;
+}

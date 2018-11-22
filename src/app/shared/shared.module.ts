@@ -10,6 +10,7 @@ import { StockStatusComponent } from './stock-status/stock-status.component';
   ],
   exports: [
     StarRatingComponent,
+    StockStatusComponent,
     CommonModule
   ]
 })

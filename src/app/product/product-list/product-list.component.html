@@ -50,8 +50,10 @@
               
               </td>
             <td> {{ product.productCode }} </td>
-            <td> {{ product.available }} </td>
-            <td> {{ product.price }} </td>
+            <td> {{ product.available }} 
+                <app-stock-status [avail] = "product.available" [th] = "product.threshold" ></app-stock-status> 
+            </td>
+            <td> {{ product.price | currency:"INR":"symbol" }} </td>
             <td class = "star-container">
                 <app-star-rating  [rating]=" product.starRating">
                 </app-star-rating>

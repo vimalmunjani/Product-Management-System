@@ -182,23 +182,11 @@
             </div>
           </div>
 
-
-
-
-
-          <!-- <div class='row singleField'>
-            <div class='col-md-4 bold-text'>Rating :</div>
-            <div class='col-md-8'>
-              <app-star-rating [rating]="">
-              </app-star-rating>
-            </div>
-
-          </div> -->
         </form>
       </div>
 
       <div class='col-md-4'>
-        <img class='center-block img-responsive' [style.width.px]='200' [style.margin.px]='2' [src]='' [title]=''>
+        <img *ngIf = "productAddForm.get('imageUrl').valid" class='center-block img-responsive' [style.width.px]='400' [style.margin.px]='2' [src]="(productAddForm.get('imageUrl').value)" [title]=''>
       </div>
     </div>
   </div>
@@ -219,5 +207,5 @@
 
   </div>
 
-
-  <pre>{{ productAddForm.valid | json }}</pre>
+  </div>
+  <br>
